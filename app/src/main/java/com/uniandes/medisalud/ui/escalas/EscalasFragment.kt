@@ -59,6 +59,7 @@ class EscalasFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.buttonBack.isVisible = false
 
         binding.ansA.setOnClickListener {
             selectedAns = binding.ansA.text.toString()
@@ -113,6 +114,21 @@ class EscalasFragment : Fragment(){
             binding.ansD.setBackgroundColor(Color.WHITE)
             binding.ansE.setBackgroundColor(Color.WHITE)
             binding.ansF.setBackgroundColor(Color.CYAN)
+        }
+
+        binding.buttonBack.setOnClickListener {
+            score = 0
+            indicePregunta = 0
+            binding.resultado.isVisible = false
+            binding.buttonBack.isVisible = false
+            binding.buttonSubmit.isVisible = true
+            binding.ansA.isVisible = true
+            binding.ansB.isVisible = true
+            binding.ansC.isVisible = true
+            binding.ansD.isVisible = true
+            binding.ansE.isVisible = true
+            binding.ansF.isVisible = true
+            cargarPregunta()
         }
 
         binding.buttonSubmit.setOnClickListener {
@@ -196,16 +212,25 @@ class EscalasFragment : Fragment(){
             indicePregunta++
 
             if(indicePregunta == 4) {
-                val builder = AlertDialog.Builder(context)
-                builder.setTitle("Escala de Glasgow")
-                builder.setMessage("El resultado de la escala de Glasgow es: $score")
-                builder.setPositiveButton("Aceptar") { dialog, which ->
-                    score = 0
-                    indicePregunta = 0
-                    cargarPregunta()
+                binding.titleEscalas.setText("Resultado")
+                binding.buttonSubmit.isVisible = false
+                binding.ansA.isVisible = false
+                binding.ansB.isVisible = false
+                binding.ansC.isVisible = false
+                binding.ansD.isVisible = false
+                binding.ansE.isVisible = false
+                binding.ansF.isVisible = false
+                binding.resultado.isVisible = true
+                binding.buttonBack.isVisible = true
+                var res = ""
+                if (score >= 13) {
+                    res = "Trauma severo"
+                } else if (score >= 9) {
+                    res = "Trauma moderado"
+                } else if (score >= 4) {
+                    res = "Trauma leve"
                 }
-                val alertDialog: AlertDialog = builder.create()
-                alertDialog.show()
+                binding.resultado.setText("El resultado de la escala de Glasgow es: $score" + "\n" + "\n" + "La cateogría del trauma es: $res")
             }
 
             if (indicePregunta == 1 && selectedAns != opciones[indicePregunta-1][0]) {
