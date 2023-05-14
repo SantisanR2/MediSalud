@@ -25,23 +25,86 @@
         app:layout_constraintVertical_bias="0.028" />
 
     <Button
-        android:id="@+id/button_glasgow"
+        android:id="@+id/ans_A"
         android:layout_width="325dp"
         android:layout_height="48dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="96dp"
+        android:backgroundTint="#FAFAFA"
         android:text="Escala de Glasgow"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_escalas" />
 
     <Button
-        android:id="@+id/button_ramsay"
+        android:id="@+id/ans_B"
         android:layout_width="325dp"
         android:layout_height="48dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="160dp"
+        android:backgroundTint="#FAFAFA"
         android:text="Escala de Ramsay"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_escalas" />
+
+    <Button
+        android:id="@+id/ans_C"
+        android:layout_width="325dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="#FAFAFA"
+        android:text="Escala de Alvarado"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_escalas" />
+
+    <Button
+        android:id="@+id/ans_E"
+        android:layout_width="325dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="352dp"
+        android:backgroundTint="#FAFAFA"
+        android:text="Escala ECOG"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_escalas" />
+
+    <Button
+        android:id="@+id/ans_F"
+        android:layout_width="325dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="416dp"
+        android:backgroundTint="#FAFAFA"
+        android:text="Escala de Norton"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_escalas" />
+
+    <Button
+        android:id="@+id/ans_D"
+        android:layout_width="325dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="288dp"
+        android:backgroundTint="#FAFAFA"
+        android:text="Escala de Fisher"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_escalas" />
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_escalas"
+        app:layout_constraintVertical_bias="0.88" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
