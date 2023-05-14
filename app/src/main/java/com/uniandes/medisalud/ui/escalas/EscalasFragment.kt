@@ -44,7 +44,7 @@ class EscalasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonGlasgow.setOnClickListener {
             val navController = findNavController()
-            navController.navigate(R.id.nav_dosis)
+
         }
     }
 
