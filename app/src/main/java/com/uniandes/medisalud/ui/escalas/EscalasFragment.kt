@@ -29,7 +29,7 @@ class EscalasFragment : Fragment(){
     private var selectedAns = ""
 
     companion object {
-        val preguntas = arrayOf("Tipos de escalas","Abertura ocular", "Respuesta verbal", "Respuesta motora")
+        val preguntas = arrayOf("Tipos de escalas","Respuesta ocular", "Respuesta verbal", "Respuesta motora")
         val opciones = arrayOf(
             arrayOf("Escala de Glasgow", "Escala de Ramsay", "Escala de Alvarado", "Escala de Fisher", "Escala de ECOG", "Escala de Norton"),
             arrayOf("Espontánea", "Al estímulo verbal", "Al estímulo doloroso", "Ausente"),
@@ -223,14 +223,14 @@ class EscalasFragment : Fragment(){
                 binding.resultado.isVisible = true
                 binding.buttonBack.isVisible = true
                 var res = ""
-                if (score >= 13) {
+                if (score < 9) {
                     res = "Trauma severo"
-                } else if (score >= 9) {
+                } else if (score >= 9 && score<=12) {
                     res = "Trauma moderado"
-                } else if (score >= 4) {
+                } else if (score >= 13) {
                     res = "Trauma leve"
                 }
-                binding.resultado.setText("El resultado de la escala de Glasgow es: $score" + "\n" + "\n" + "La cateogría del trauma es: $res")
+                binding.resultado.setText("El resultado de la escala es: $score" + "\n" + "\n" + "La categoría es: $res")
             }
 
             if (indicePregunta == 1 && selectedAns != opciones[indicePregunta-1][0]) {
