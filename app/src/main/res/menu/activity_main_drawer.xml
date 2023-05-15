@@ -13,8 +13,8 @@
             android:icon="@android:drawable/ic_menu_compass"
             android:title="@string/menu_dosis" />
         <item
-            android:id="@+id/nav_otro"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_signin"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="@string/menu_signin" />
     </group>
 </menu>
